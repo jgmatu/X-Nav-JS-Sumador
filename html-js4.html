@@ -1,0 +1,33 @@
+<html>
+        <head>
+                <title>JS P3</title>
+        </head>
+        <body id="body">
+                <p>Adder...<span id='op'></span>
+                <span id="res"></span> <a href="javascript:sum()">Add!</a></p>
+                <span id="new"></span> <a href="javascript:new_op()">New!</a>
+        </body>
+        <footer>
+                <script type="text/javascript" charset="utf-8">
+                        function sum() {
+                                var e = document.getElementById("op");
+                                nums = e.innerHTML.split("+");
+                                var total = 0;
+                                for (i in nums) {
+                                        total += parseInt(nums[i]);
+                                }
+                                var res = document.getElementById("res");
+                                res.innerHTML = "= " + total;
+                        }
+                        function new_op() {
+                                var a = Math.floor((Math.random() * 1000) + 1);
+                                var b = Math.floor((Math.random() * 1000) + 1);
+                                var op = document.getElementById("op");
+                                op.innerHTML = a + "+" + b;
+                                var res = document.getElementById("res");
+                                res.innerHTML = "";
+                        }
+                        new_op();
+                </script>
+        </footer>
+</html>
